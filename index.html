@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Você, Mary</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #faf0f5;
+      color: #333;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      position: relative;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+      animation: floatUp 1.2s ease-out forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: #b23cbe;
+    }
+    h2 {
+      color: #a12a9f;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 700px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    button, a.botao {
+      margin-top: 2rem;
+      background: #b23cbe;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    button:hover, a.botao:hover {
+      background: #9e2fa6;
+    }
+
+    /* Estilo dos corações */
+    .heart {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: red;
+      transform: rotate(-45deg);
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      animation: flyUp 1s ease forwards;
+      z-index: 9999;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -15px;
+      left: 0;
+    }
+    .heart::after {
+      left: 15px;
+      top: 0;
+    }
+
+    @keyframes flyUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(-45deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.5) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Carta de amor -->
+  <section id="carta" class="visible">
+    <h1>Para você, Mary</h1>
+    <p>
+      Eu sei que ainda não somos oficialmente um namorados, mas isso não me impede de demonstrar o quanto você é especial pra mim. <br><br>
+      Desde que te conheci, tudo ficou mais bonito. Sua presença ilumina meus dias e sua voz acalma meu coração. Eu gosto de você de um jeito puro, sincero, daqueles que a gente sente no peito e não consegue esconder. <br><br>
+      Quero estar ao seu lado, não só nos momentos bons, mas também nos difíceis. Quero ser alguém em quem você possa confiar, contar e se apoiar. <br><br>
+      Sei que ainda estou conquistando seu coração, mas pode ter certeza: eu estou disposto a lutar por você todos os dias. Quero te mostrar o melhor de mim, te fazer sorrir e te lembrar, sempre, o quão incrível você é. <br><br>
+      Se você me der a chance, prometo cuidar de você com carinho, respeito e admiração. Porque você merece o melhor, e eu quero ser esse melhor. <br><br>
+      Você faz com que eu sinta a vontade de amar de novo, você fez eu sentir novamente algo que achei que nunca mais ia sentir, e eu te agradeço demais por isso, deixa
+      eu te mostrar o melhor de mim.<br><br>
+      Com todo meu carinho, <br><br>
+      <strong>Gabriel</strong>
+    </p>
+    <button onclick="scrollToSection('musica')">Ouvir música</button>
+  </section>
+
+  <!-- Seção da música -->
+  <section id="musica">
+    <h2>Música</h2>
+    <p>Sempre que escuto essa música, lembro de você.</p>
+    <a href="https://youtu.be/WmEHXzcYMcc?si=GCue1dic1pQ2I2_B" target="_blank" class="botao">Ouvir no YouTube</a>
+    <button onclick="scrollToSection('olhos')">Continuar</button>
+  </section>
+
+  <!-- Seção: olhos -->
+  <section id="olhos">
+    <h2>Seus olhos</h2>
+    <p>
+      Seus olhos têm um jeito de me enxergar que me perco toda vez que olho para eles. Quando você me olha, tudo ao redor desacelera, e eu só penso em como tive sorte de ter você comigo.
+    </p>
+    <button onclick="scrollToSection('boca')">Continuar</button>
+  </section>
+
+  <!-- Seção: boca -->
+  <section id="boca">
+    <h2>Sua boca</h2>
+    <p>
+      Sua boca me encanta não só pelo sorriso, mas pelas palavras carinhosas que sai dela. Cada risada, fala comigo de um jeito único.
+    </p>
+    <button onclick="scrollToSection('sorriso')">Continuar</button>
+  </section>
+
+  <!-- Seção: sorriso -->
+  <section id="sorriso">
+    <h2>Seu sorriso</h2>
+    <p>
+      Seu sorriso me encanta toda vez que olho pra ele, faço todas as as piadas ruins possiveis só para ver você rindo .
+    </p>
+    <button onclick="scrollToSection('voz')">Continuar</button>
+  </section>
+
+  <!-- Seção: voz -->
+  <section id="voz">
+    <h2>Sua voz</h2>
+    <p>
+      Quando você fala, mesmo as palavras mais simples tudo ao meu redor para só para te escutar. Sua voz é meu som favorito.
+    </p>
+    <button onclick="scrollToSection('jeito')">Continuar</button>
+  </section>
+
+  <!-- Seção: jeito -->
+  <section id="jeito">
+    <h2>Seu jeito</h2>
+    <p>
+      Amo seu jeito de se expressar, seu sorriso quando faço alguma gracinha, sua maturidade. Você me inspira a ser melhor todos os dias.
+    </p>
+    <button onclick="scrollToSection('fim')">Continuar</button>
+  </section>
+
+  <!-- Seção final -->
+  <section id="fim">
+    <h2>O todo é você</h2>
+    <p>
+      Não é só uma parte é o todo. É você!. E eu amo tudo em você! cada detalhe seu faz com que me sinta mais apaixonado cada dia mais, obrigado por deixar eu participar da sua vida 
+      agradeço todo santo dia por isso.
+    </p>
+    <button onclick="scrollToSection('carta')">Voltar ao início</button>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const scrollToSection = id => document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+
+    const onScroll = () => {
+      sections.forEach((sec, index) => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.75) {
+          sec.style.animationDelay = (index * 0.3) + 's';
+          sec.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    // Função que cria o coração na posição do clique/toque
+    function createHeart(x, y) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = (x - 15) + 'px';
+      heart.style.top = (y - 15) + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 1000);
+    }
+
+    // Event listeners para clique e toque
+    window.addEventListener('click', e => {
+      createHeart(e.clientX, e.clientY);
+    });
+    window.addEventListener('touchstart', e => {
+      if (e.touches.length > 0) {
+        const touch = e.touches[0];
+        createHeart(touch.clientX, touch.clientY);
+      }
+    });
+  </script>
+
+</body>
+</html>
